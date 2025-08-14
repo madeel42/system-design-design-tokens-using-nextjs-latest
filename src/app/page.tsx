@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Button } from "@/src/app/components/ui/button";
+import { Button } from "@/app/components/ui/button";
 import {
   Dialog,
   DialogTrigger,
   DialogContent,
-} from "@/src/app/components/ui/dialog";
+} from "@/app/components/ui/dialog";
 import { ArrowRight } from "lucide-react";
+import { Icon } from "@/app/components/icon/Icon";
 
 interface Item {
   id: number;
@@ -16,7 +17,6 @@ interface Item {
 
 export default function Page() {
   const [items, setItems] = useState<Item[]>([]);
-
   useEffect(() => {
     fetch("/api/items")
       .then((res) => res.json())
@@ -30,7 +30,14 @@ export default function Page() {
       <Dialog>
         <DialogTrigger asChild>
           <Button variant="destructive" size="lg">
-            View Items <ArrowRight className="ml-2 h-4 w-4" />
+            View Items
+            <Icon
+              icon={ArrowRight}
+              size="20px"
+              color="#fff"
+              aria-label="Arrow right"
+              className="ml-2"
+            />
           </Button>
         </DialogTrigger>
 
