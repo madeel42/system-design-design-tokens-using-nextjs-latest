@@ -29,7 +29,7 @@ export default function Page() {
 
       <Dialog>
         <DialogTrigger asChild>
-          <Button variant="outline" size="lg">
+          <Button variant="destructive" size="lg">
             View Items <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </DialogTrigger>
